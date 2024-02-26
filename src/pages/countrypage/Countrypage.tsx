@@ -19,8 +19,8 @@ export function Countrypage() {
     )
 
     return (
-        <section className="countrypage flex mx-40">
-            <section className="content justify-center min-h-[450px] flex-1 bg-base border-modal border-[1px] rounded-2xl mt-6 mx-8">
+        <section className="countrypage flex lg:mx-40">
+            <section className="content justify-center min-h-[450px] min-w-[650px] lg:min-w-fit flex-1 bg-base border-modal border-[1px] rounded-2xl mt-6 mx-8">
                 <Wait
                     isLoading={!country || isLoading}
                     className="items-center -mt-12"
