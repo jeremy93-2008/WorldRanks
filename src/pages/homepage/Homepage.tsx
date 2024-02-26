@@ -27,15 +27,18 @@ export function Homepage() {
     const { countries } = useCountriesFilteredSorted(rawCountries ?? [])
 
     return (
-        <section className="content min-h-[450px] bg-base border-modal border-[1px] rounded-2xl mx-8 p-8">
-            <Wait isLoading={!rawCountries || rawCountries.length === 0}>
+        <section className="content min-h-[450px] min-w-[640px] w-[80vw] lg:min-w-[980px] lg:max-w-[1280px] bg-base border-modal border-[1px] rounded-2xl p-8">
+            <Wait
+                isLoading={!rawCountries || rawCountries.length === 0}
+                className=""
+            >
                 <section className="content-header flex flex-1 items-center justify-between">
                     <span className="flex flex-1 text-primary">
                         Found {countries?.length} countries
                     </span>
                     <Search />
                 </section>
-                <section className="content-body flex flex-1 mt-8">
+                <section className="content-body flex flex-1 mt-8 flex-col lg:flex-row">
                     <SideFilters
                         sortByOptions={sortByOptions}
                         selectedRegionOptions={selectedRegionOptions}

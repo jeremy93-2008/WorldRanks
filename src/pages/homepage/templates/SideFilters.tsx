@@ -11,7 +11,7 @@ export function SideFilters(props: SideFiltersProps) {
     const { sortByOptions, selectedRegionOptions } = props
 
     return (
-        <section className="sideFilters flex flex-col flex-0 w-[300px] px-2">
+        <section className="sideFilters flex flex-col flex-0 mb-8 lg:mb-0 lg:w-[300px] px-2">
             <SortBy sortByOptions={sortByOptions} />
             <RegionFilter selectedRegionOptions={selectedRegionOptions} />
             <StatusFilter />

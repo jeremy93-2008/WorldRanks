@@ -27,10 +27,10 @@ const routes = createBrowserRouter([
 
 function App() {
     return (
-        <section className="app flex justify-center">
+        <section className="app flex">
             <Toaster position="top-right" richColors />
             <section className="image absolute bg-hero-image w-full h-[300px] bg-[cover]" />
-            <section className="container relative z-10 flex-1">
+            <section className="world-container flex-1 flex flex-col relative items-center z-10">
                 <Header />
                 <RouterProvider router={routes} />
             </section>

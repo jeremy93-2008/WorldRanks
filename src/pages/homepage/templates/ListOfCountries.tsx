@@ -27,7 +27,7 @@ export function ListOfCountries(props: ListProps) {
 
     return (
         <section className="listOfCountries flex-1">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500">
+            <table className="w-full table-fixed text-sm text-left rtl:text-right text-gray-500">
                 <thead className="text-sm border-b border-modal">
                     <tr>
                         <th
@@ -83,7 +83,7 @@ export function ListOfCountries(props: ListProps) {
                                     <img
                                         src={country.flags.png}
                                         alt={country.name.common}
-                                        className="w-10 h-5 rounded-sm"
+                                        className="w-8 h-6 rounded-sm"
                                     />
                                 </td>
                                 <td className="px-6 py-4">
