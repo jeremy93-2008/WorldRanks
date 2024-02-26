@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Wait } from '../../components/Wait'
 import { useDocumentTitle } from '../../hooks/useDocumentTitle'
 import { useSingleCountry } from './hooks/useSingleCountry'
+import { formatNumber } from '../../utils/formatNumber'
 
 export function Countrypage() {
     const { code } = useParams<{ code: string }>()
@@ -35,9 +36,7 @@ export function Countrypage() {
                             <p className="">Population</p>
                             <div className="border-r-[1px] border-base h-8 ml-3" />
                             <p className="ml-2">
-                                {new Intl.NumberFormat().format(
-                                    country?.population ?? 0
-                                )}
+                                {formatNumber(country?.population ?? 0)}
                             </p>
                         </div>
                         <div className="flex items-center bg-modal px-6 py-3 rounded-xl">
@@ -46,9 +45,7 @@ export function Countrypage() {
                             </p>
                             <div className="border-r-[1px] border-base h-8 ml-3" />
                             <p className="ml-2">
-                                {new Intl.NumberFormat().format(
-                                    country?.area ?? 0
-                                )}
+                                {formatNumber(country?.area ?? 0)}
                             </p>
                         </div>
                     </section>

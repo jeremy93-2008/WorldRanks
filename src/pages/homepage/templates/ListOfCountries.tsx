@@ -1,6 +1,7 @@
 import { ICountry } from '../../../types/restcountries.type'
 import { useCountriesStore } from '../../../hooks/useCountriesStore'
 import { useNavigate } from 'react-router-dom'
+import { formatNumber } from '../../../utils/formatNumber'
 
 interface ListProps {
     countries: ICountry[]
@@ -81,14 +82,10 @@ export function ListOfCountries(props: ListProps) {
                                 </span>
                             </td>
                             <td className="px-6 py-4">
-                                {new Intl.NumberFormat(
-                                    navigator.language ?? 'en-US'
-                                ).format(country.population)}
+                                {formatNumber(country.population)}
                             </td>
                             <td className="px-6 py-4">
-                                {new Intl.NumberFormat(
-                                    navigator.language ?? 'en-US'
-                                ).format(country.area)}
+                                {formatNumber(country.area)}
                             </td>
                             <td className="px-6 py-4">{country.region}</td>
                         </tr>
