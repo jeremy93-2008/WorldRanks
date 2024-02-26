@@ -1,5 +1,6 @@
 import { ICountry } from '../../../types/restcountries.type'
 import { useCountriesStore } from '../../../hooks/useCountriesStore'
+import { useNavigate } from 'react-router-dom'
 
 interface ListProps {
     countries: ICountry[]
@@ -9,6 +10,14 @@ export function ListOfCountries(props: ListProps) {
     const { countries } = props
     const sortBy = useCountriesStore((state) => state.data.sortBy)
     const setSortBy = useCountriesStore((state) => state.actions.setSortBy)
+
+    const navigate = useNavigate()
+
+    const handleRowClick = (country: ICountry) => {
+        return (_evt: React.MouseEvent<HTMLTableRowElement, MouseEvent>) => {
+            navigate(`/country/${country.cca3}`)
+        }
+    }
 
     return (
         <section className="listOfCountries flex-1">
@@ -54,7 +63,11 @@ export function ListOfCountries(props: ListProps) {
                 </thead>
                 <tbody>
                     {countries.map((country) => (
-                        <tr key={country.name.common} className="">
+                        <tr
+                            onClick={handleRowClick(country)}
+                            key={country.name.common}
+                            className="cursor-pointer border-b border-modal hover:bg-modalBorder hover:bg-opacity-10 transition-colors"
+                        >
                             <td className="px-6 py-4">
                                 <img
                                     src={country.flags.png}

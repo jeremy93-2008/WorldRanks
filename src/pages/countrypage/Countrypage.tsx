@@ -1,15 +1,13 @@
 import { useParams } from 'react-router-dom'
-import { useCountriesStore } from '../../hooks/useCountriesStore'
 
 import { Wait } from '../../components/Wait'
 import { useDocumentTitle } from '../../hooks/useDocumentTitle'
+import { useSingleCountry } from './hooks/useSingleCountry'
 
 export function Countrypage() {
     const { code } = useParams<{ code: string }>()
 
-    const countries = useCountriesStore((state) => state.data.countries)
-
-    const country = countries?.find((country) => country.cca3 === code)
+    const { country } = useSingleCountry(code!)
 
     useDocumentTitle(
         country?.name?.common

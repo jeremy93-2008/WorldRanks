@@ -34,42 +34,42 @@ export interface ICountry {
     startOfWeek: string
     capitalInfo: CapitalInfo
     postalCode: PostalCode
-  }
-  
-  export interface Name {
+}
+
+export interface Name {
     common: string
     official: string
     nativeName: NativeName
-  }
-  
-  export interface NativeName {
+}
+
+export interface NativeName {
     deu: Deu
-  }
-  
-  export interface Deu {
+}
+
+export interface Deu {
     official: string
     common: string
-  }
-  
-  export interface Currencies {
+}
+
+export interface Currencies {
     EUR: Eur
-  }
-  
-  export interface Eur {
+}
+
+export interface Eur {
     name: string
     symbol: string
-  }
-  
-  export interface Idd {
+}
+
+export interface Idd {
     root: string
     suffixes: string[]
-  }
-  
-  export interface Languages {
+}
+
+export interface Languages {
     deu: string
-  }
-  
-  export interface Translations {
+}
+
+export interface Translations {
     ara: Ara
     bre: Bre
     ces: Ces
@@ -95,179 +95,183 @@ export interface ICountry {
     tur: Tur
     urd: Urd
     zho: Zho
-  }
-  
-  export interface Ara {
+}
+
+export interface Ara {
     official: string
     common: string
-  }
-  
-  export interface Bre {
+}
+
+export interface Bre {
     official: string
     common: string
-  }
-  
-  export interface Ces {
+}
+
+export interface Ces {
     official: string
     common: string
-  }
-  
-  export interface Cym {
+}
+
+export interface Cym {
     official: string
     common: string
-  }
-  
-  export interface Deu2 {
+}
+
+export interface Deu2 {
     official: string
     common: string
-  }
-  
-  export interface Est {
+}
+
+export interface Est {
     official: string
     common: string
-  }
-  
-  export interface Fin {
+}
+
+export interface Fin {
     official: string
     common: string
-  }
-  
-  export interface Fra {
+}
+
+export interface Fra {
     official: string
     common: string
-  }
-  
-  export interface Hrv {
+}
+
+export interface Hrv {
     official: string
     common: string
-  }
-  
-  export interface Hun {
+}
+
+export interface Hun {
     official: string
     common: string
-  }
-  
-  export interface Ita {
+}
+
+export interface Ita {
     official: string
     common: string
-  }
-  
-  export interface Jpn {
+}
+
+export interface Jpn {
     official: string
     common: string
-  }
-  
-  export interface Kor {
+}
+
+export interface Kor {
     official: string
     common: string
-  }
-  
-  export interface Nld {
+}
+
+export interface Nld {
     official: string
     common: string
-  }
-  
-  export interface Per {
+}
+
+export interface Per {
     official: string
     common: string
-  }
-  
-  export interface Pol {
+}
+
+export interface Pol {
     official: string
     common: string
-  }
-  
-  export interface Por {
+}
+
+export interface Por {
     official: string
     common: string
-  }
-  
-  export interface Rus {
+}
+
+export interface Rus {
     official: string
     common: string
-  }
-  
-  export interface Slk {
+}
+
+export interface Slk {
     official: string
     common: string
-  }
-  
-  export interface Spa {
+}
+
+export interface Spa {
     official: string
     common: string
-  }
-  
-  export interface Srp {
+}
+
+export interface Srp {
     official: string
     common: string
-  }
-  
-  export interface Swe {
+}
+
+export interface Swe {
     official: string
     common: string
-  }
-  
-  export interface Tur {
+}
+
+export interface Tur {
     official: string
     common: string
-  }
-  
-  export interface Urd {
+}
+
+export interface Urd {
     official: string
     common: string
-  }
-  
-  export interface Zho {
+}
+
+export interface Zho {
     official: string
     common: string
-  }
-  
-  export interface Demonyms {
+}
+
+export interface Demonyms {
     eng: Eng
     fra: Fra2
-  }
-  
-  export interface Eng {
+}
+
+export interface Eng {
     f: string
     m: string
-  }
-  
-  export interface Fra2 {
+}
+
+export interface Fra2 {
     f: string
     m: string
-  }
-  
-  export interface Maps {
+}
+
+export interface Maps {
     googleMaps: string
     openStreetMaps: string
-  }
-  
-  export interface Gini {
-    "2016": number
-  }
-  
-  export interface Car {
+}
+
+export interface Gini {
+    '2016': number
+}
+
+export interface Car {
     signs: string[]
     side: string
-  }
-  
-  export interface Flags {
+}
+
+export interface Flags {
     png: string
     svg: string
     alt: string
-  }
-  
-  export interface CoatOfArms {
+}
+
+export interface CoatOfArms {
     png: string
     svg: string
-  }
-  
-  export interface CapitalInfo {
+}
+
+export interface CapitalInfo {
     latlng: number[]
-  }
-  
-  export interface PostalCode {
+}
+
+export interface PostalCode {
     format: string
     regex: string
-  }
-  
+}
+
+export interface CountryError {
+    status: number
+    message: string
+}
