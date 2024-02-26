@@ -11,6 +11,7 @@ export default {
             borderColor: {
                 base: '#1B1D1F',
                 modal: '#282B30',
+                modalBorder: '#6C727F',
             },
             textColor: {
                 base: '#D2D5DA',

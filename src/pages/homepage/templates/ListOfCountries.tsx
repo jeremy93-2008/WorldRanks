@@ -2,6 +2,8 @@ import { ICountry } from '../../../types/restcountries.type'
 import { useCountriesStore } from '../../../hooks/useCountriesStore'
 import { useNavigate } from 'react-router-dom'
 import { formatNumber } from '../../../utils/formatNumber'
+import { Pagination } from '../components/Pagination'
+import { useTablePagination } from '../hooks/useTablePagination'
 
 interface ListProps {
     countries: ICountry[]
@@ -19,6 +21,9 @@ export function ListOfCountries(props: ListProps) {
             navigate(`/country/${country.cca3}`)
         }
     }
+
+    const { currentPage, itemsPerPage, pageCount, handlePageChange } =
+        useTablePagination(countries.length)
 
     return (
         <section className="listOfCountries flex-1">
@@ -63,33 +68,40 @@ export function ListOfCountries(props: ListProps) {
                     </tr>
                 </thead>
                 <tbody>
-                    {countries.map((country) => (
-                        <tr
-                            onClick={handleRowClick(country)}
-                            key={country.name.common}
-                            className="cursor-pointer border-b border-modal hover:bg-modalBorder hover:bg-opacity-10 transition-colors"
-                        >
-                            <td className="px-6 py-4">
-                                <img
-                                    src={country.flags.png}
-                                    alt={country.name.common}
-                                    className="w-10 rounded-md"
-                                />
-                            </td>
-                            <td className="px-6 py-4">
-                                <span className="font-medium">
-                                    {country.name.common}
-                                </span>
-                            </td>
-                            <td className="px-6 py-4">
-                                {formatNumber(country.population)}
-                            </td>
-                            <td className="px-6 py-4">
-                                {formatNumber(country.area)}
-                            </td>
-                            <td className="px-6 py-4">{country.region}</td>
-                        </tr>
-                    ))}
+                    {countries
+                        .slice(
+                            currentPage * itemsPerPage,
+                            currentPage * itemsPerPage + itemsPerPage
+                        )
+                        .map((country) => (
+                            <tr
+                                onClick={handleRowClick(country)}
+                                key={country.name.common}
+                                className="cursor-pointer border-b border-modal hover:bg-modalBorder hover:bg-opacity-10 transition-colors"
+                            >
+                                <td className="px-6 py-4">
+                                    <img
+                                        src={country.flags.png}
+                                        alt={country.name.common}
+                                        className="w-10 h-5 rounded-sm"
+                                    />
+                                </td>
+                                <td className="px-6 py-4">
+                                    <span className="flex text-nowrap font-medium text-ellipsis w-[140px]">
+                                        {country.name.common}
+                                    </span>
+                                </td>
+                                <td className="px-6 py-4 min-w-[150px] w-[150px]">
+                                    {formatNumber(country.population)}
+                                </td>
+                                <td className="px-6 py-4 min-w-[130px] w-[130px]">
+                                    {formatNumber(country.area)}
+                                </td>
+                                <td className="px-6 py-4 min-w-[130px] w-[130px]">
+                                    {country.region}
+                                </td>
+                            </tr>
+                        ))}
                     {countries.length === 0 && (
                         <tr>
                             <td colSpan={5} className="text-center py-4">
@@ -97,6 +109,26 @@ export function ListOfCountries(props: ListProps) {
                             </td>
                         </tr>
                     )}
+                    <tr>
+                        <td colSpan={5} className="py-4">
+                            <Pagination
+                                currentPage={currentPage}
+                                pageCount={pageCount}
+                                itemsPerPage={itemsPerPage}
+                                onPreviousPage={() => {
+                                    if (currentPage > 0) {
+                                        handlePageChange(currentPage - 1)
+                                    }
+                                }}
+                                onNextPage={() => {
+                                    if (currentPage < pageCount - 1) {
+                                        handlePageChange(currentPage + 1)
+                                    }
+                                }}
+                                onPageChange={handlePageChange}
+                            />
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </section>
