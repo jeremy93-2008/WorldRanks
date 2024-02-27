@@ -27,7 +27,7 @@ export function Homepage() {
     const { countries } = useCountriesFilteredSorted(rawCountries ?? [])
 
     return (
-        <section className="content min-h-[450px] w-[80vw] lg:min-w-[980px] lg:max-w-[1280px] bg-base border-modal border-[1px] rounded-2xl p-8">
+        <section className="content min-h-[450px] w-[100vw] lg:w-[80vw] lg:min-w-[980px] lg:max-w-[1280px] lg:rounded-2xl bg-base border-modal border-t lg:border p-8">
             <Wait
                 isLoading={!rawCountries || rawCountries.length === 0}
                 className=""

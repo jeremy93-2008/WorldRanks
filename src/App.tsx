@@ -29,7 +29,7 @@ function App() {
     return (
         <section className="relative app flex flex-1">
             <Toaster position="top-right" richColors />
-            <section className="image absolute bg-hero-image w-full h-[300px] bg-cover" />
+            <section className="image absolute bg-hero-image w-full h-[300px] bg-center bg-cover" />
             <section className="world-container flex-1 flex flex-col relative items-center z-10">
                 <Header />
                 <RouterProvider router={routes} />
