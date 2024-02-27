@@ -19,7 +19,10 @@ export function NeighbouringCountries(props: NeighbouringCountriesProps) {
         >
             {borders!.map((border) => (
                 <section
-                    onClick={() => navigate(`/country/${border.cca3}`)}
+                    onClick={() => {
+                        window.scroll({ top: 0 })
+                        navigate(`/country/${border.cca3}`)
+                    }}
                     className="flex flex-col items-center justify-center cursor-pointer hover:bg-modal px-3 pt-4 pb-2 rounded-md"
                 >
                     <img
