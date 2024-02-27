@@ -8,3 +8,7 @@ body {
     color: #d2d5da;
     font-family: 'Be Vietnam Pro', sans-serif;
 }
+
+#root {
+    display: flex;
+}

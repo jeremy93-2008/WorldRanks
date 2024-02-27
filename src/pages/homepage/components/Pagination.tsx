@@ -12,7 +12,7 @@ export function Pagination(props: PaginationProps) {
         props
     return (
         <div className="flex justify-center">
-            <nav aria-label="Page navigation example">
+            <nav>
                 <ul className="inline-flex mt-4 -space-x-px text-xs">
                     <li>
                         <a

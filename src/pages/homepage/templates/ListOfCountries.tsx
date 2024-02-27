@@ -26,8 +26,8 @@ export function ListOfCountries(props: ListProps) {
         useTablePagination(countries.length)
 
     return (
-        <section className="listOfCountries flex-1">
-            <table className="w-full table-fixed text-sm text-left rtl:text-right text-gray-500">
+        <section className="listOfCountries flex-1 overflow-x-auto">
+            <table className="min-w-[600px] w-full table-fixed text-sm text-left rtl:text-right text-gray-500">
                 <thead className="text-sm border-b border-modal">
                     <tr>
                         <th
@@ -83,7 +83,7 @@ export function ListOfCountries(props: ListProps) {
                                     <img
                                         src={country.flags.png}
                                         alt={country.name.common}
-                                        className="w-8 h-6 rounded-sm"
+                                        className="w-9 h-6 rounded-sm"
                                     />
                                 </td>
                                 <td className="px-6 py-4">

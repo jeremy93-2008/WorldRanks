@@ -27,7 +27,7 @@ export function NeighbouringCountries(props: NeighbouringCountriesProps) {
                         alt={border.name.common}
                         className="w-20 h-12 rounded-md"
                     />
-                    <p key={border.cca3} className="mt-2 text-sm">
+                    <p key={border.cca3} className="mt-2 text-xs md:text-sm">
                         {border.name.common}
                     </p>
                 </section>

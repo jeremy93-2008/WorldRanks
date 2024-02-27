@@ -14,7 +14,7 @@ export function Wait(props: WaitProps) {
                 </section>
             )}
             {isLoading && (
-                <section className="flex flex-1 justify-center">
+                <section className="flex flex-1 pt-6 justify-center">
                     <div role="status">
                         <svg
                             aria-hidden="true"
