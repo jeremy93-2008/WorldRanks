@@ -20,7 +20,7 @@ export function Countrypage() {
 
     return (
         <section className="countrypage flex">
-            <section className="content justify-center min-h-[450px] min-w-[80vw] max-w-max lg:min-w-0 lg:max-w-[680px] flex-1 bg-base border-modal border-[1px] rounded-2xl mt-6">
+            <section className="content justify-center min-h-[450px] min-w-[80vw] max-w-max lg:min-w-[680px] lg:max-w-[680px] flex-1 bg-base border-modal border-[1px] rounded-2xl mt-6">
                 <Wait
                     isLoading={!country || isLoading}
                     className="items-center -mt-12"
