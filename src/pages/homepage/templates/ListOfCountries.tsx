@@ -18,6 +18,9 @@ export function ListOfCountries(props: ListProps) {
 
     const handleRowClick = (country: ICountry) => {
         return (_evt: React.MouseEvent<HTMLTableRowElement, MouseEvent>) => {
+            window.scroll({
+                top: 0,
+            })
             navigate(`/country/${country.cca3}`)
         }
     }
